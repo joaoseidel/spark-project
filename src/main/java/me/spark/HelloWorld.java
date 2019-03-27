@@ -1,12 +1,14 @@
-import static spark.Spark.port;
+package me.spark;
 
 import me.spark.user.UserController;
-import me.spark.user.UserService;
+
+import static spark.Spark.port;
 
 public class HelloWorld {
     public static void main(String[] args) {
         port(4567);
 
-        new UserController(new UserService());
+        UserController userController = new UserController();
     }
+
 }

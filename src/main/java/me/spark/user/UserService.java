@@ -1,14 +1,19 @@
 package me.spark.user;
 
-import java.util.List;
+import org.omg.CORBA.UserException;
 
-public class UserService {
+import java.util.Collection;
 
-    public List<ApplicationUser> getAllUsers() {
-        return null;
-    }
+public interface UserService {
+    public void addUser(User user);
 
-    public Object getUserByUsername(String username) {
-        return null;
-    }
+    public Collection<User> getUsers();
+
+    public User getUser(String id);
+
+    public User editUser(User user) throws UserException, me.spark.user.exceptions.UserException;
+
+    public void deleteUser(String id);
+
+    public boolean userExist(String id);
 }
